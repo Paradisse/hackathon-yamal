@@ -17,12 +17,12 @@ var window: UIWindow?
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
+        window?.rootViewController = UINavigationController(rootViewController: SignView())
         window?.makeKeyAndVisible()
         return true
     }
 
-    
+    // FOR TEST COMMIT
 
 }
 

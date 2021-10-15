@@ -9,17 +9,21 @@
 /* Begin PBXBuildFile section */
 		F34E4E702719D4D5004E5296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */; };
 		F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E712719D4D5004E5296 /* SceneDelegate.swift */; };
-		F34E4E742719D4D5004E5296 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E732719D4D5004E5296 /* ViewController.swift */; };
+		F34E4E742719D4D5004E5296 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E732719D4D5004E5296 /* SignView.swift */; };
 		F34E4E792719D4D9004E5296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34E4E782719D4D9004E5296 /* Assets.xcassets */; };
+		F34E4E852719D713004E5296 /* SignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E842719D713004E5296 /* SignPresenter.swift */; };
+		F34E4E872719D719004E5296 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E862719D719004E5296 /* SignModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F34E4E6C2719D4D5004E5296 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F34E4E712719D4D5004E5296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F34E4E732719D4D5004E5296 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F34E4E732719D4D5004E5296 /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 		F34E4E782719D4D9004E5296 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F34E4E7D2719D4D9004E5296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F34E4E842719D713004E5296 /* SignPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignPresenter.swift; sourceTree = "<group>"; };
+		F34E4E862719D719004E5296 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +56,23 @@
 		F34E4E6E2719D4D5004E5296 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				F34E4E832719D6E4004E5296 /* SignView */,
 				F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */,
 				F34E4E712719D4D5004E5296 /* SceneDelegate.swift */,
-				F34E4E732719D4D5004E5296 /* ViewController.swift */,
 				F34E4E782719D4D9004E5296 /* Assets.xcassets */,
 				F34E4E7D2719D4D9004E5296 /* Info.plist */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		F34E4E832719D6E4004E5296 /* SignView */ = {
+			isa = PBXGroup;
+			children = (
+				F34E4E732719D4D5004E5296 /* SignView.swift */,
+				F34E4E842719D713004E5296 /* SignPresenter.swift */,
+				F34E4E862719D719004E5296 /* SignModel.swift */,
+			);
+			path = SignView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34E4E742719D4D5004E5296 /* ViewController.swift in Sources */,
+				F34E4E872719D719004E5296 /* SignModel.swift in Sources */,
+				F34E4E742719D4D5004E5296 /* SignView.swift in Sources */,
 				F34E4E702719D4D5004E5296 /* AppDelegate.swift in Sources */,
 				F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */,
+				F34E4E852719D713004E5296 /* SignPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +278,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RBRFGT8CHB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Calendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -288,6 +305,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RBRFGT8CHB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Calendar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
