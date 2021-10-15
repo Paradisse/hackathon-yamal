@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F3049A04271A02470032CB16 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A03271A02470032CB16 /* LogIn.swift */; };
+		F3049A06271A0FE10032CB16 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A05271A0FE10032CB16 /* LogInPresenter.swift */; };
+		F3049A08271A10020032CB16 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A07271A10020032CB16 /* LogInModel.swift */; };
 		F34E4E702719D4D5004E5296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */; };
 		F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E712719D4D5004E5296 /* SceneDelegate.swift */; };
 		F34E4E742719D4D5004E5296 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E732719D4D5004E5296 /* SignView.swift */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		F3049A03271A02470032CB16 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		F3049A05271A0FE10032CB16 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		F3049A07271A10020032CB16 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
 		F34E4E6C2719D4D5004E5296 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F34E4E712719D4D5004E5296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +47,8 @@
 			isa = PBXGroup;
 			children = (
 				F3049A03271A02470032CB16 /* LogIn.swift */,
+				F3049A05271A0FE10032CB16 /* LogInPresenter.swift */,
+				F3049A07271A10020032CB16 /* LogInModel.swift */,
 			);
 			path = LogIn;
 			sourceTree = "<group>";
@@ -158,7 +164,9 @@
 				F34E4E872719D719004E5296 /* SignModel.swift in Sources */,
 				F3049A04271A02470032CB16 /* LogIn.swift in Sources */,
 				F34E4E742719D4D5004E5296 /* SignView.swift in Sources */,
+				F3049A06271A0FE10032CB16 /* LogInPresenter.swift in Sources */,
 				F34E4E702719D4D5004E5296 /* AppDelegate.swift in Sources */,
+				F3049A08271A10020032CB16 /* LogInModel.swift in Sources */,
 				F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */,
 				F34E4E852719D713004E5296 /* SignPresenter.swift in Sources */,
 			);
@@ -218,7 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
