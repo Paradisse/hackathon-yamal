@@ -24,7 +24,19 @@ class LogIn: UIViewController
    
     @objc func logIN(_ sender: UIButton)
     {
+        let tabBarController = UITabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
         
+        let vaccine = VaccineListView()
+        let reccomendation = ReccomView()
+        let user = UsersView()
+        
+        let vaccineView = UINavigationController(rootViewController: vaccine)
+        let reccomendationView = UINavigationController(rootViewController: reccomendation)
+        let usersView = UINavigationController(rootViewController: user)
+
+        tabBarController.setViewControllers([reccomendationView, vaccineView, usersView], animated: true)
+        present(tabBarController, animated: true, completion: nil)
     }
     
     override func viewDidLoad()

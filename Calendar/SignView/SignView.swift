@@ -17,9 +17,38 @@ class SignView: UIViewController
     
     @objc func signIn(_ sender: UIButton)
     {
-        let setLogin = login.text
-        let setPassword = password.text
+//        let setLogin = login.text
+//        let setPassword = password.text
+        let tabBarController = UITabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        
+        let vaccine = VaccineListView()
+        let reccomendation = ReccomView()
+        let user = UsersView()
+        
+        let vaccineView = UINavigationController(rootViewController: vaccine)
+        let reccomendationView = UINavigationController(rootViewController: reccomendation)
+        let usersView = UINavigationController(rootViewController: user)
+
+        
+        tabBarController.setViewControllers([reccomendationView, vaccineView, usersView], animated: true)
+        
+        
+        guard let items = tabBarController.tabBar.items else {return}
+        
+        let images = ["house", "list.star", "person.3.fill"]
+        for x in 0..<items.count
+        {
+            items[x].image = UIImage(systemName: images[x])
+        }
+        tabBarController.tabBar.backgroundColor = .white
+        
+        
+        present(tabBarController, animated: true, completion: nil)
+        
+        
     }
+    
     
     @objc func goToLogView(_ sender: UIButton)
     {
