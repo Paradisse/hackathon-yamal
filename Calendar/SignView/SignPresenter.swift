@@ -12,6 +12,6 @@ class SignPresenter
     
     private let model = SignModel()
     
-    
+   
 }
 
