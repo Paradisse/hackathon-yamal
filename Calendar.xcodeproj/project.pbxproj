@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461C35501CF8B63FB5454745 /* Pods_Calendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F4EB84B9A70E8513A43837 /* Pods_Calendar.framework */; };
 		F3049A04271A02470032CB16 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A03271A02470032CB16 /* LogIn.swift */; };
 		F3049A06271A0FE10032CB16 /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A05271A0FE10032CB16 /* LogInPresenter.swift */; };
 		F3049A08271A10020032CB16 /* LogInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A07271A10020032CB16 /* LogInModel.swift */; };
@@ -19,15 +20,21 @@
 		F3049A1B271A1C350032CB16 /* VaccineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A1A271A1C350032CB16 /* VaccineListView.swift */; };
 		F3049A1D271A1C420032CB16 /* VaccineListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A1C271A1C420032CB16 /* VaccineListPresenter.swift */; };
 		F3049A1F271A1C640032CB16 /* VaccineListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3049A1E271A1C640032CB16 /* VaccineListModel.swift */; };
+		F33FD50C271A3A1C008CC04F /* AddUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33FD50B271A3A1C008CC04F /* AddUserView.swift */; };
 		F34E4E702719D4D5004E5296 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */; };
 		F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E712719D4D5004E5296 /* SceneDelegate.swift */; };
 		F34E4E742719D4D5004E5296 /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E732719D4D5004E5296 /* SignView.swift */; };
 		F34E4E792719D4D9004E5296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34E4E782719D4D9004E5296 /* Assets.xcassets */; };
 		F34E4E852719D713004E5296 /* SignPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E842719D713004E5296 /* SignPresenter.swift */; };
 		F34E4E872719D719004E5296 /* SignModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E4E862719D719004E5296 /* SignModel.swift */; };
+		F3A55AEA271ABA9F00FCF616 /* addUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A55AE9271ABA9F00FCF616 /* addUserPresenter.swift */; };
+		F3A55AEC271ABAAB00FCF616 /* addUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A55AEB271ABAAB00FCF616 /* addUserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00F4EB84B9A70E8513A43837 /* Pods_Calendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Calendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61281EEB917315DA2F1188B1 /* Pods-Calendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.debug.xcconfig"; path = "Target Support Files/Pods-Calendar/Pods-Calendar.debug.xcconfig"; sourceTree = "<group>"; };
+		A15BF7B2D2162B3ACDE3F629 /* Pods-Calendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calendar.release.xcconfig"; path = "Target Support Files/Pods-Calendar/Pods-Calendar.release.xcconfig"; sourceTree = "<group>"; };
 		F3049A03271A02470032CB16 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
 		F3049A05271A0FE10032CB16 /* LogInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
 		F3049A07271A10020032CB16 /* LogInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInModel.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		F3049A1A271A1C350032CB16 /* VaccineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListView.swift; sourceTree = "<group>"; };
 		F3049A1C271A1C420032CB16 /* VaccineListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListPresenter.swift; sourceTree = "<group>"; };
 		F3049A1E271A1C640032CB16 /* VaccineListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaccineListModel.swift; sourceTree = "<group>"; };
+		F33FD50B271A3A1C008CC04F /* AddUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserView.swift; sourceTree = "<group>"; };
 		F34E4E6C2719D4D5004E5296 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F34E4E712719D4D5004E5296 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +56,8 @@
 		F34E4E7D2719D4D9004E5296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F34E4E842719D713004E5296 /* SignPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignPresenter.swift; sourceTree = "<group>"; };
 		F34E4E862719D719004E5296 /* SignModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignModel.swift; sourceTree = "<group>"; };
+		F3A55AE9271ABA9F00FCF616 /* addUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addUserPresenter.swift; sourceTree = "<group>"; };
+		F3A55AEB271ABAAB00FCF616 /* addUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addUserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,12 +65,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				461C35501CF8B63FB5454745 /* Pods_Calendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EADCC3CAE91087F3DD4AC83F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61281EEB917315DA2F1188B1 /* Pods-Calendar.debug.xcconfig */,
+				A15BF7B2D2162B3ACDE3F629 /* Pods-Calendar.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F3049A02271A01F50032CB16 /* LogIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +122,23 @@
 			path = Reccomendation;
 			sourceTree = "<group>";
 		};
+		F33FD50A271A3A03008CC04F /* addUser */ = {
+			isa = PBXGroup;
+			children = (
+				F33FD50B271A3A1C008CC04F /* AddUserView.swift */,
+				F3A55AE9271ABA9F00FCF616 /* addUserPresenter.swift */,
+				F3A55AEB271ABAAB00FCF616 /* addUserModel.swift */,
+			);
+			path = addUser;
+			sourceTree = "<group>";
+		};
 		F34E4E632719D4D5004E5296 = {
 			isa = PBXGroup;
 			children = (
 				F34E4E6E2719D4D5004E5296 /* Calendar */,
 				F34E4E6D2719D4D5004E5296 /* Products */,
+				EADCC3CAE91087F3DD4AC83F /* Pods */,
+				F60B9E66437DFB83792B6E80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +158,7 @@
 				F3049A13271A1B700032CB16 /* Reccomendation */,
 				F3049A12271A1B5C0032CB16 /* VaccineList */,
 				F3049A09271A139F0032CB16 /* Users */,
+				F33FD50A271A3A03008CC04F /* addUser */,
 				F34E4E6F2719D4D5004E5296 /* AppDelegate.swift */,
 				F34E4E712719D4D5004E5296 /* SceneDelegate.swift */,
 				F34E4E782719D4D9004E5296 /* Assets.xcassets */,
@@ -143,6 +177,14 @@
 			path = SignView;
 			sourceTree = "<group>";
 		};
+		F60B9E66437DFB83792B6E80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00F4EB84B9A70E8513A43837 /* Pods_Calendar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,9 +192,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F34E4E802719D4D9004E5296 /* Build configuration list for PBXNativeTarget "Calendar" */;
 			buildPhases = (
+				6F97F24A5C5D552B855E5322 /* [CP] Check Pods Manifest.lock */,
 				F34E4E682719D4D5004E5296 /* Sources */,
 				F34E4E692719D4D5004E5296 /* Frameworks */,
 				F34E4E6A2719D4D5004E5296 /* Resources */,
+				37702EC6BA0E6C91E7BE1284 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,6 +251,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37702EC6BA0E6C91E7BE1284 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calendar/Pods-Calendar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Calendar/Pods-Calendar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Calendar/Pods-Calendar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F97F24A5C5D552B855E5322 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F34E4E682719D4D5004E5296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -214,6 +300,8 @@
 			files = (
 				F34E4E872719D719004E5296 /* SignModel.swift in Sources */,
 				F3049A04271A02470032CB16 /* LogIn.swift in Sources */,
+				F3A55AEC271ABAAB00FCF616 /* addUserModel.swift in Sources */,
+				F3A55AEA271ABA9F00FCF616 /* addUserPresenter.swift in Sources */,
 				F3049A1D271A1C420032CB16 /* VaccineListPresenter.swift in Sources */,
 				F34E4E742719D4D5004E5296 /* SignView.swift in Sources */,
 				F3049A06271A0FE10032CB16 /* LogInPresenter.swift in Sources */,
@@ -229,6 +317,7 @@
 				F34E4E722719D4D5004E5296 /* SceneDelegate.swift in Sources */,
 				F34E4E852719D713004E5296 /* SignPresenter.swift in Sources */,
 				F3049A0B271A13BD0032CB16 /* UsersView.swift in Sources */,
+				F33FD50C271A3A1C008CC04F /* AddUserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +382,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -353,6 +443,7 @@
 		};
 		F34E4E812719D4D9004E5296 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61281EEB917315DA2F1188B1 /* Pods-Calendar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -365,6 +456,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -374,12 +466,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F34E4E822719D4D9004E5296 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A15BF7B2D2162B3ACDE3F629 /* Pods-Calendar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -392,6 +485,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,7 +495,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

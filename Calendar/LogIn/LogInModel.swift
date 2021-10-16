@@ -10,4 +10,9 @@ import UIKit
 class LogInModel
 {
     
+    func writeNewUser(login: String, password: String) -> Bool
+    {
+        
+        return true
+    }
 }

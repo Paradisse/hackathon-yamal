@@ -13,40 +13,15 @@ class SignView: UIViewController
     var password = UITextField()
     var signIn = UIButton()
     var logIn = UIButton()
-    
+    var presenter = SignPresenter()
     
     @objc func signIn(_ sender: UIButton)
     {
-//        let setLogin = login.text
-//        let setPassword = password.text
-        let tabBarController = UITabBarController()
-        tabBarController.modalPresentationStyle = .fullScreen
-        
-        let vaccine = VaccineListView()
-        let reccomendation = ReccomView()
-        let user = UsersView()
-        
-        let vaccineView = UINavigationController(rootViewController: vaccine)
-        let reccomendationView = UINavigationController(rootViewController: reccomendation)
-        let usersView = UINavigationController(rootViewController: user)
-
-        
-        tabBarController.setViewControllers([reccomendationView, vaccineView, usersView], animated: true)
-        
-        
-        guard let items = tabBarController.tabBar.items else {return}
-        
-        let images = ["house", "list.star", "person.3.fill"]
-        for x in 0..<items.count
+        let newTabBar = presenter.getTabBarController(login: login.text!, password: login.text!)
+        if newTabBar != nil
         {
-            items[x].image = UIImage(systemName: images[x])
+        present(newTabBar!, animated: true, completion: nil)
         }
-        tabBarController.tabBar.backgroundColor = .white
-        
-        
-        present(tabBarController, animated: true, completion: nil)
-        
-        
     }
     
     
@@ -75,7 +50,7 @@ class SignView: UIViewController
         
         signIn.frame = CGRect(x: 10, y: password.frame.height + password.frame.origin.y + password.frame.height / 4, width: password.frame.width, height: password.frame.height)
         signIn.layer.cornerRadius = password.layer.cornerRadius
-        signIn.setTitle("Вход", for: .normal)
+        signIn.setTitle("Войти", for: .normal)
         signIn.titleLabel?.textAlignment = .center
         signIn.addTarget(self, action: #selector(signIn(_:)), for: .touchDown)
         

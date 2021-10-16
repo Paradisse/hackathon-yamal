@@ -9,5 +9,9 @@ import Foundation
 import UIKit
 class SignModel
 {
-    
+    func enterNewUser(login: String, password: String) -> Bool
+    {
+        
+        return true
+    }
 }

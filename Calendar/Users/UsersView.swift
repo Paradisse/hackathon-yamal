@@ -13,10 +13,12 @@ class UsersView: UIViewController, UITableViewDelegate, UITableViewDataSource
     var tableView = UITableView()
     var idCell = "familyCell"
     var viewNew = UIView()
+    let users = ["Алина", "Даня", "Иван", "Тема", "Дима"]
     
     @objc func addMember(_ sender: UIBarButtonItem)
     {
-        
+        let addUserView = UINavigationController(rootViewController: AddUserView())
+        present(addUserView, animated: true, completion: nil)
     }
     
     override func viewDidLoad()
@@ -52,7 +54,7 @@ class UsersView: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: idCell)
-        cell.textLabel?.text = "ФИО"
+        cell.textLabel?.text = users[indexPath.row]
         cell.textLabel?.textAlignment = .center
         cell.backgroundColor = .white
         return cell
