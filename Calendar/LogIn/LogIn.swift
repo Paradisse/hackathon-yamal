@@ -15,10 +15,8 @@ class LogIn: UIViewController
     
     var login = UITextField() // логин
     var password = UITextField() // пароль
-    
-    
+
     var logInButton = UIButton()
-    
     let scrollView = UIScrollView()
     
     let presenter = LogInPresenter()
@@ -26,11 +24,15 @@ class LogIn: UIViewController
     @objc func logIN(_ sender: UIButton)
     {
         
-        let newTabBar = presenter.getTabBarController(login: login.text!, password: login.text!)
-        if newTabBar != nil
+         presenter.getTabBarController(login: login.text!, password: password.text!)
         {
-        present(newTabBar!, animated: true, completion: nil)
+            newController in
+            if newController != nil
+            {
+            self.present(newController!, animated: true, completion: nil)
+            }
         }
+        
     }
     
     override func viewDidLoad()

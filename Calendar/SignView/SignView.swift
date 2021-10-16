@@ -17,10 +17,13 @@ class SignView: UIViewController
     
     @objc func signIn(_ sender: UIButton)
     {
-        let newTabBar = presenter.getTabBarController(login: login.text!, password: login.text!)
-        if newTabBar != nil
+         presenter.getTabBarController(login: login.text!, password: password.text!)
         {
-        present(newTabBar!, animated: true, completion: nil)
+            tabBar in
+            if tabBar != nil
+            {
+                self.present(tabBar!, animated: true, completion: nil)
+            }
         }
     }
     

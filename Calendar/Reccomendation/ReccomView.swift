@@ -6,12 +6,15 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ReccomView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let realm = try! Realm()
+        let user: Results<User> = realm.objects(User.self)
+        print(user[0].login)
 //        title = "Рекомендации"
         navigationItem.title = "Рекомендации"
         view.backgroundColor = .systemGray5
