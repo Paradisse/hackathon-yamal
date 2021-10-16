@@ -47,7 +47,7 @@ session = Session()
 
 @app.route("/login/<string:user_email>/<string:user_pass>", methods=['GET'])
 @marshal_with(res_fields)
-def login(self, user_email, user_pass):
+def login(user_email, user_pass):
     try:
         hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
         response = session.query(UserModel).filter(UserModel.email == user_email, UserModel.password == hash_pass).one()
@@ -58,7 +58,7 @@ def login(self, user_email, user_pass):
 
 @app.route("/register/<string:user_email>/<string:user_pass>", methods=['POST'])
 @marshal_with(res_fields)
-def register(self, user_email, user_pass):
+def register(user_email, user_pass):
     args = user_put_args.parse_args()
     hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
     user = UserModel(first_name=args['first_name'], second_name=args['second_name'], patronymic=args['patronymic'],
