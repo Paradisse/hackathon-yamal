@@ -1,4 +1,4 @@
-package com.example.calendar.ui.dashboard;
+package com.example.calendar.ui.VaccineCard;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
