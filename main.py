@@ -2,6 +2,7 @@ import hashlib
 import json
 from flask import Flask, abort, make_response
 from flask_restful import Api
+from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
 from sqlalchemy.inspection import inspect
@@ -21,6 +22,8 @@ class Serializer(object):
 
 app = Flask(__name__)
 api = Api(app)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///hackathon.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = "True"
 db = SQLAlchemy(app)
@@ -61,6 +64,7 @@ schema = UserSchema()
 
 
 @app.route("/login/<string:user_email>/<string:user_pass>", methods=["GET"])
+@cross_origin()
 def login(user_email, user_pass):
     try:
         hash_pass = hashlib.sha256(user_pass.encode("utf-8")).hexdigest()
@@ -73,6 +77,7 @@ def login(user_email, user_pass):
 
 
 @app.route("/register/<string:user_email>/<string:user_pass>", methods=["POST"])
+@cross_origin()
 def register(user_email, user_pass):
     try:
         # TODO: add parsing args
