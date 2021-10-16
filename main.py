@@ -1,13 +1,13 @@
+import hashlib
 import json
-
-from flask import Flask, request, abort, jsonify, make_response
-from flask_restful import Api, Resource, reqparse, fields, marshal_with
+from flask import Flask, abort, make_response
+from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
+from sqlalchemy.inspection import inspect
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
-import hashlib
-from sqlalchemy.inspection import inspect
+from marshmallow import Schema, fields
 
 
 class Serializer(object):
@@ -21,17 +21,11 @@ class Serializer(object):
 
 app = Flask(__name__)
 api = Api(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hackathon.db'
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///hackathon.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = "True"
 db = SQLAlchemy(app)
-engine = create_engine('sqlite:///hackathon.db', echo=True)
+engine = create_engine("sqlite:///hackathon.db", echo=True)
 Session = sessionmaker(bind=engine)
-
-user_put_args = reqparse.RequestParser()
-user_put_args.add_argument("first_name", type=str)
-user_put_args.add_argument("second_name", type=str)
-user_put_args.add_argument("patronymic", type=str)
-user_put_args.add_argument("email", type=str)
-user_put_args.add_argument("password", type=str)
 
 
 class UserModel(db.Model, Serializer):
@@ -44,7 +38,7 @@ class UserModel(db.Model, Serializer):
 
     def serialize(self):
         d = Serializer.serialize(self)
-        del d['password']
+        del d["password"]
         return d
 
     def __init__(self, first_name, second_name, patronymic, email, password):
@@ -55,42 +49,39 @@ class UserModel(db.Model, Serializer):
         self.password = password
 
     def __repr__(self):
-        return "<User('%s','%s', '%s', '%s', '%s')>" % (self.second_name, self.first_name, self.patronymic,
-                                                        self.email, self.password)
+        return "<User(first_name={self.first_name!r})>".format(self=self)
 
 
-res_fields = {
-    "id": fields.Integer,
-    "email": fields.String,
-    "first_name": fields.String,
-    "second_name": fields.String,
-}
+UserSchema = Schema.from_dict(
+    {"first_name": fields.Str(), "second_name": fields.Str(), "patronymic": fields.Str(), "email": fields.Str(),
+     "password": fields.Str()}
+)
 session = Session()
+schema = UserSchema()
 
 
-@app.route("/login/<string:user_email>/<string:user_pass>", methods=['GET'])
+@app.route("/login/<string:user_email>/<string:user_pass>", methods=["GET"])
 def login(user_email, user_pass):
     try:
-        hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
+        hash_pass = hashlib.sha256(user_pass.encode("utf-8")).hexdigest()
         response = UserModel.query.filter(UserModel.email == user_email, UserModel.password == hash_pass).one()
-        data = json.dumps(response.serialize())
+        data = schema.dump(response)
         return make_response(data, 200)
     except NoResultFound:
-        data = {'message': 'No such user in db', 'code': 'ERROR'}
-        return make_response(jsonify(data), 404)
+        data = {"message": "No such user in db", "code": "ERROR"}
+        return make_response(json.dumps(data), 404)
 
 
-@app.route("/register/<string:user_email>/<string:user_pass>", methods=['POST'])
+@app.route("/register/<string:user_email>/<string:user_pass>", methods=["POST"])
 def register(user_email, user_pass):
     try:
-        args = user_put_args.parse_args()
-        hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
-        user = UserModel(first_name=args['first_name'], second_name=args['second_name'], patronymic=args['patronymic'],
-                         email=user_email, password=hash_pass)
+        # TODO: add parsing args
+        hash_pass = hashlib.sha256(user_pass.encode("utf-8")).hexdigest()
+        user = UserModel(email=user_email, password=hash_pass, first_name=None, second_name=None, patronymic=None)
         db.session.add(user)
         db.session.commit()
-        data = {'message': 'User created', 'code': 'SUCCESS'}
-        return make_response(jsonify(data), 201)
+        data = {"message": "User created", "code": "SUCCESS"}
+        return make_response(json.dumps(data), 201)
     except TimeoutError as e:
         print(e)
         abort(400)
