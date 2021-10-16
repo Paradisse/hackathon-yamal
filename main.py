@@ -50,10 +50,10 @@ class User(Resource):
     def get(self, user_email, user_pass):
         try:
             hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
-            u = UserModel(email=user_email, password=hash_pass)
-            response = session.query(UserModel).filter(UserModel.email == user_email, UserModel.password == hash_pass).one()
+            response = session.query(UserModel).filter(UserModel.email == user_email, UserModel.password == hash_pass)\
+                .one()
             return response, 200
-        except NoResultFound as e:
+        except NoResultFound:
             return {"error": "No such user"}, 404
 
     @marshal_with(res_fields)
