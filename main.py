@@ -45,7 +45,7 @@ res_fields = {
 session = Session()
 
 
-@app.route("/login/<user_email>,<user_pass>", methods=['GET'])
+@app.route("/login/<string:user_email>/<string:user_pass>", methods=['GET'])
 @marshal_with(res_fields)
 def login(self, user_email, user_pass):
     try:
@@ -56,7 +56,7 @@ def login(self, user_email, user_pass):
         return {"error": "No such user"}, 404
 
 
-@app.route("/register/<user_email>,<user_pass>", methods=['POST'])
+@app.route("/register/<string:user_email>/<string:user_pass>", methods=['POST'])
 @marshal_with(res_fields)
 def register(self, user_email, user_pass):
     args = user_put_args.parse_args()
