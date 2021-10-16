@@ -45,29 +45,28 @@ res_fields = {
 session = Session()
 
 
-class User(Resource):
-    @marshal_with(res_fields)
-    def get(self, user_email, user_pass):
-        try:
-            hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
-            response = session.query(UserModel).filter(UserModel.email == user_email, UserModel.password == hash_pass)\
-                .one()
-            return response, 200
-        except NoResultFound:
-            return {"error": "No such user"}, 404
-
-    @marshal_with(res_fields)
-    def put(self, user_email, user_pass):
-        args = user_put_args.parse_args()
+@app.route("/login/<user_email>,<user_pass>", methods=['GET'])
+@marshal_with(res_fields)
+def login(self, user_email, user_pass):
+    try:
         hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
-        user = UserModel(first_name=args['first_name'], second_name=args['second_name'], patronymic=args['patronymic'],
-                         email=user_email, password=hash_pass)
-        db.session.add(user)
-        db.session.commit()
-        return user, 201
+        response = session.query(UserModel).filter(UserModel.email == user_email, UserModel.password == hash_pass).one()
+        return response, 200
+    except NoResultFound:
+        return {"error": "No such user"}, 404
 
 
-api.add_resource(User, "/user/<string:user_email>/<string:user_pass>")
+@app.route("/register/<user_email>,<user_pass>", methods=['POST'])
+@marshal_with(res_fields)
+def register(self, user_email, user_pass):
+    args = user_put_args.parse_args()
+    hash_pass = hashlib.sha256(user_pass.encode('utf-8')).hexdigest()
+    user = UserModel(first_name=args['first_name'], second_name=args['second_name'], patronymic=args['patronymic'],
+                     email=user_email, password=hash_pass)
+    db.session.add(user)
+    db.session.commit()
+    return user, 201
+
 
 if __name__ == "__main__":
     app.run(debug=True)
