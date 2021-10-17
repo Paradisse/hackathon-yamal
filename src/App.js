@@ -3,13 +3,14 @@ import Authorizaion from './Components/Authorization.js'
 import Registration  from "./Components/Registration.js";
 import MainPage from './Components/MainPage'
 import './App.css';
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
 function App({ history }) {
-  
+  const [person, setPerson] = useState({})
   function handleCreatePerson(newPerson) {
-    console.log(newPerson)
+    setPerson(newPerson)
   }
+  console.log(person)
     // const [personsList, setPersonsList] = useState([])
 
     // function addUser(regSurname, regName, regPatronymic, regMail, regPhone, regPassword, e) {
@@ -30,7 +31,8 @@ function App({ history }) {
     <div className="App">
       <Route history={history} path='/authorization' component={Authorizaion}/>
       <Route history={history} path='/registration' render={(props) => <Registration createPerson={handleCreatePerson}/>} />
-      <Route history={history} path='/main' render={(props) => <MainPage createPerson={handleCreatePerson}/>} />
+      <Route history={history} path='/main' render={(props) => <MainPage person={person}/>} />
+      <Redirect from='/' to='/registration' />
     </div>
   );
 }
