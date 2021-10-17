@@ -3,7 +3,7 @@ import Authorizaion from './Components/Authorization.js'
 import Registration  from "./Components/Registration.js";
 import MainPage from './Components/MainPage'
 import './App.css';
-import { Route,Redirect } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 function App({ history }) {
   
