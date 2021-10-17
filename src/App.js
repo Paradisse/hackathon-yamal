@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from "react"
+import Authorizaion from './Components/Authorization.js'
+import Registration  from "./Components/Registration.js";
+import MainPage from './Components/MainPage'
 import './App.css';
+import { Route,Redirect } from 'react-router-dom'
 
-function App() {
-  return (
+function App({ history }) {
+  
+  function handleCreatePerson(newPerson) {
+    console.log(newPerson)
+  }
+    // const [personsList, setPersonsList] = useState([])
+
+    // function addUser(regSurname, regName, regPatronymic, regMail, regPhone, regPassword, e) {
+    //     const newUser = {
+    //       surname:`${regSurname}`,
+    //       name: `${regName}`,
+    //       patronymic: `${regPatronymic}`,
+    //       email: `${regMail}`,
+    //       phone: `${regPhone}`,
+    //       password: `${regPassword}`
+    //     }
+    //     setPersonsList([...personsList, newUser])
+    //     // console.log('users:', persons)
+    // }
+    
+    
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route history={history} path='/authorization' component={Authorizaion}/>
+      <Route history={history} path='/registration' render={(props) => <Registration createPerson={handleCreatePerson}/>} />
+      <Route history={history} path='/main' render={(props) => <MainPage createPerson={handleCreatePerson}/>} />
     </div>
   );
 }
