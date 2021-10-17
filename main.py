@@ -79,9 +79,10 @@ def login(user_email, user_pass):
         return make_response(json.dumps(data), 400)
 
 
-@app.route("/register/<string:user_email>/<string:user_pass>", methods=["POST"])
+@app.route("/register/<string:sec_name>/<string:f_name>/<string:patron>/<string:user_email>/<string:user_pass>",
+           methods=["POST"])
 @cross_origin()
-def register(user_email, user_pass):
+def register(sec_name, f_name, patron, user_email, user_pass):
     # TODO: add parsing args
     res = session.query(UserModel).filter(UserModel.email == user_email).first()
     if res is not None:
@@ -89,7 +90,8 @@ def register(user_email, user_pass):
         return make_response(json.dumps(data), 200)
     else:
         hash_pass = hashlib.sha256(user_pass.encode("utf-8")).hexdigest()
-        user = UserModel(email=user_email, password=hash_pass, first_name=None, second_name=None, patronymic=None)
+        user = UserModel(email=user_email, password=hash_pass, first_name=f_name, second_name=sec_name,
+                         patronymic=patron)
         db.session.add(user)
         db.session.commit()
         s = schema.dump(user)
