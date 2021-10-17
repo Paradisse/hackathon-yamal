@@ -3,6 +3,7 @@ package com.example.calendar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,6 +14,9 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.calendar.ui.Profiles.NotificationsFragment;
 
 import java.util.Calendar;
 
@@ -43,6 +47,7 @@ public class AddUserProfileActivity extends AppCompatActivity implements View.On
 
         birthDate = findViewById(R.id.birthDate);
         createUser = findViewById(R.id.createUser);
+        createUser.setOnClickListener(this);
         userName = findViewById(R.id.userName);
 
 
@@ -97,8 +102,9 @@ public class AddUserProfileActivity extends AppCompatActivity implements View.On
             case R.id.createUser:
                 varUserName = userName.getText().toString();
                 varUserBirthDay = birthDate.getText().toString();
+                Intent BackToProfileFragment = new Intent(this, MainActivity.class);
+                startActivity(BackToProfileFragment);
                 break;
-
         }
     }
 }
